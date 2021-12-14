@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+<head>
+<meta charset="UTF-8">
+<title>LojaVirtal - Atualização</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+	<h3>Atualização de produtos:</h3>
+	<h3><a href="/produtos" class="waves-effect waves-light btn"><i class="material-icons left">book</i>Lista de produtos</a></h3>
+	<form action="#" th:action="@{/cadastrarProduto}" th:object="${produto}" method="post">
+	ID: <input type="text" th:field="*{id}" readonly="readonly"/>
+	Nome: <input type="text" value="" name="nome"/>
+	Preço: <input type="text" value="" name="preco"/>
+	Desconto <input type="text" value="" name="desconto"/>
+	
+	<button type="submit">Salvar</button>
+
+
+</form>
+	
+	 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>
+
+

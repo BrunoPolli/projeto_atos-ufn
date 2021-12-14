@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+<head>
+<meta charset="UTF-8">
+<title>LojaVirtal - Home</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<h2>Produto</h2>
+	<h3><a class="waves-effect waves-light btn"><i class="material-icons left">add</i>Lista de Produtos</a></h3>
+	<div th:each="produto: ${produto}" class="container">
+		<div class="row">
+			<p>Nome: <span th:text="${produto.nome}"></span></p>
+			<p>Preço: <span th:text="${produto.preco}"></span></p>
+			<p>Desconto: <span th:text="${produto.descricao}"></span></p>
+		</div>
+	</div>
+	
+	
+     
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+<head>
+<meta charset="UTF-8">
+<title>LojaVirtal - Home</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<h3>Loja Virtual</h3>
+	<h3><a href="/cadastrarProduto" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Novo produto</a></h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Preço</th>
+				<th>Desconto</th>
+			</tr>
+		</thead>
+		<tbody>		
+			<tr th:each="produto : ${produtos}">
+		
+			<td><span th:text="${produto.nome}"></span></td>
+			<td><span th:text="${produto.preco}"></span></td>
+			<td><span th:text="${produto.desconto}"></span></td>
+			<td>
+				<a th:href="@{'/alterar/' + ${produto.id}}" class="waves-effect waves-light btn">Alterar</a>
+				<a th:href="@{'/delete/' + ${produto.id}}" class="waves-effect waves-light btn">Excluir</a>
+			</td>
+			</tr>
+		</tbody>
+	</table>	
+	
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>
